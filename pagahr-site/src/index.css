@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Chivo:wght@400;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --pg-black: #111111;
+  --pg-amber: #F5A623;
+  --pg-amber-deep: #D88E0E;
+  --pg-amber-light: #FEF3DC;
+  --pg-slate: #1E293B;
+  --pg-midnight: #0F172A;
+  --pg-text: #0F172A;
+  --pg-text-mid: #374151;
+  --pg-text-light: #6B7280;
+  --pg-border: #E2E8F0;
+  --pg-surface: #F1F5F9;
+  --pg-success: #16A34A;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--pg-text);
+  background: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { width: 100%; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.15s;
+  font-family: inherit;
+}
+.btn-primary { background: var(--pg-black); color: #fff; }
+.btn-primary:hover { background: #000; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.btn-amber { background: var(--pg-amber); color: var(--pg-black); }
+.btn-amber:hover { background: var(--pg-amber-deep); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(245,166,35,0.4); }
+.btn-ghost { background: transparent; color: var(--pg-text-mid); }
+.btn-ghost:hover { color: var(--pg-black); }
+.btn-outline { background: transparent; color: var(--pg-black); border: 1.5px solid var(--pg-border); }
+.btn-outline:hover { border-color: var(--pg-black); transform: translateY(-2px); }
+.btn-arrow { transition: transform 0.2s; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* Reveal animations */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }
+.reveal.delay-5 { transition-delay: 0.5s; }
+.reveal.delay-6 { transition-delay: 0.6s; }
+
+/* Section shared */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--pg-amber-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+.section-eyebrow::before { content: '✦ '; }
+
+.section-title {
+  font-family: 'Chivo', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+  margin: 0 0 16px;
+  color: var(--pg-black);
+  text-wrap: balance;
+}
+.section-title .accent { color: var(--pg-amber); }
+
+.section-sub { font-size: 17px; color: var(--pg-text-mid); line-height: 1.6; }
+.section-header { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+
+/* Keyframes */
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+}
+@keyframes underlineAnim {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes floatY {
+  0%, 100% { transform: rotateY(-8deg) rotateX(4deg) translateY(0); }
+  50% { transform: rotateY(-8deg) rotateX(4deg) translateY(-10px); }
+}
+@keyframes floatY2 {
+  0%, 100% { transform: rotateY(8deg) rotateX(-3deg) translateY(0); }
+  50% { transform: rotateY(8deg) rotateX(-3deg) translateY(10px); }
+}
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes msgIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+@keyframes floatPhone {
+  0%, 100% { transform: rotateY(-5deg) rotateX(2deg) translateY(0); }
+  50% { transform: rotateY(-5deg) rotateX(2deg) translateY(-20px); }
+}
+@keyframes floatTooltip {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
