@@ -4,7 +4,7 @@ import styles from './Pricing.module.css';
 const PLANS = [
   {
     tier: 'Starter',
-    price: '49',
+    price: '79',
     unit: '/ emp · mo',
     desc: 'For teams of 10–50, just getting off spreadsheets.',
     features: ['Employees, payroll, attendance','Leave management','Mobile app (iOS & Android)','Payslip PDF + bulk email','Email support'],
@@ -14,7 +14,7 @@ const PLANS = [
   },
   {
     tier: 'Growth',
-    price: '89',
+    price: '149',
     unit: '/ emp · mo',
     desc: 'For 50–250 employees. Everything in Starter, plus AI & compliance.',
     features: ['Everything in Starter','AI HR Chatbot (built-in)','Tax, declarations, Form 16','Performance & OKRs','Assets, letters, 13 reports','Public self-onboarding URL','Priority chat support'],
